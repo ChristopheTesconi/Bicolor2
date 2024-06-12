@@ -1,0 +1,39 @@
+    <!-- Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark {% block navCss %}bg-info{% endblock %}">
+        <div class="container-fluid">
+        <div class=""></div>
+            <a href="#" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none header-logo ">
+                <img src="{{ asset('images/logo-bicolor-noir-fond-transparent.png')}}" height="42" alt="Logo Bicolor">
+                <span class="header-logo__title"><!-- Bicolor--></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {% block nav %}
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  href=""><i class="bi bi-person"></i>Utilisateurs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  href=""><i class="bi bi-chat-left-text"></i> Commentaires</a>
+                        </li>
+                         <span>{{app.user}}</span>
+                        
+                    
+                </ul>
+                
+						<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            
+						</ul>
+                     
+						<a href= class="btn btn-danger me-2">Retour page accueil</a>
+				
+
+                
+            </div>
+        </div>
+    </nav>
+    {% endblock %}

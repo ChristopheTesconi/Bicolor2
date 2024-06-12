@@ -1,80 +1,39 @@
 {% extends 'base.html.twig' %}
 
+
+
 {% block title %}Utilisateurs{% endblock %}
 
 {% block body %}
+
+{% include "fragments/nav.html.twig" %}
+
 <h1 class="mt-3">Mes Utilisateurs</h1>
 
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">Type</th>
-      <th scope="col">Column heading</th>
-      <th scope="col">Column heading</th>
-      <th scope="col">Column heading</th>
+      <th scope="col">ID</th>
+      <th scope="col">Nom de l'utilisateur</th>
+      <th scope="col">Email de l'utilisateur</th>
+      <th scope="col">Role</th>
+      <th scope="col">Score</th>
+      <th scope="col">Commentaires</th>
     </tr>
   </thead>
+  {% for user in users %}
   <tbody>
     <tr class="table-active">
-      <th scope="row">Active</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
+      <th scope="row">{{ user.id }}</th>
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.roles | join(', ') }}</td>
+      <td>{{ user.scores }}</td>
+      <td>{{ user.comments }}</td>
     </tr>
-    <tr>
-      <th scope="row">Default</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-primary">
-      <th scope="row">Primary</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-secondary">
-      <th scope="row">Secondary</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-success">
-      <th scope="row">Success</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-danger">
-      <th scope="row">Danger</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-warning">
-      <th scope="row">Warning</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-info">
-      <th scope="row">Info</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-light">
-      <th scope="row">Light</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
-    <tr class="table-dark">
-      <th scope="row">Dark</th>
-      <td>Column content</td>
-      <td>Column content</td>
-      <td>Column content</td>
-    </tr>
+    {% else %}
+    Aucun utilisateurs trouvés.
+  {% endfor %}
   </tbody>
 </table>
 {% endblock %}
