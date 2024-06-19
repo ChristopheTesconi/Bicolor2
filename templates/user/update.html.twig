@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier un utilisateur{% endblock %}
+
+{% block body %}
+{% include 'fragments/nav.html.twig' %}
+<div class="container mt-5">
+   <h1 class="mx-2 mt-2">Utilisateur {{user.name}}</h1>
+
+    {{ include('user/form.html.twig', {'button_label': 'Modifier'}) }}
+
+    <a href="{{ path('app_user') }}"class="btn btn-dark mt-3">Retour liste</a>
+</div>
+{% endblock %}
