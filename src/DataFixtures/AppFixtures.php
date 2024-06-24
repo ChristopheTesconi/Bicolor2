@@ -21,7 +21,7 @@ class AppFixtures extends Fixture
     {
         $faker = Factory::create('fr_FR');
 
-        for ($u = 0; $u < 5; $u++) {
+        for ($u = 0; $u < 10; $u++) {
             $user = new User;
             $user->setEmail($faker->unique()->safeEmail());
             // $user->setRoles($faker->shuffle(array('admin, user')));
